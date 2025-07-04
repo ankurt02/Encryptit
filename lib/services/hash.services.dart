@@ -1,8 +1,14 @@
 import 'package:dio/dio.dart';
 
 class HashService {
- final Dio _dio = Dio(BaseOptions(baseUrl: 'https://encryptit.onrender.com')); // if Android Emulator
- // Replace with IP if using emulator
+  final Dio _dio = Dio(
+    BaseOptions(
+      baseUrl: 'https://encryptit-1.onrender.com',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    ),
+  );
 
   Future<String> hashText(String text, String algorithm) async {
     try {
